@@ -28,9 +28,12 @@ rm-openvino-repo: rm-openvino
 install:
 	ln -fs /opt/intel/openvino/deployment_tools/open_model_zoo/demos/python_demos/face_recognition_demo/ .
 	pip install -r requirements.txt
+	mkdir -p models
+	./get_models.sh
 
 uninstall:
 	rm face_recognition_demo
+	rm -rf models
 
 # Utility for checking what installation files are present
 check:
