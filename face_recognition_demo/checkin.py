@@ -309,9 +309,13 @@ class Visualizer:
         self.draw_text_with_background(frame,
                                        "FPS: %.1f" % (self.fps),
                                        (origin + (0, text_size[1] * 1.5)), font, text_scale, color)
-        for i, identity in enumerate(self.found):
-            self.draw_text_with_background(frame, '%s %s'%(identity, self.found[identity]),
-                                       (origin + (0, text_size[1] * (i+2) * 1.5)), font, text_scale, color)
+        pos = 2
+        for label in self.found:
+            if label == 'Unknown':
+                continue
+            self.draw_text_with_background(frame, '%s %s'%(label, self.found[label]),
+                                       (origin + (0, text_size[1] * pos * 1.5)), font, text_scale, color)
+            pos += 1
 
         log.debug('Frame: %s/%s, detections: %s, ' \
                   'frame time: %.3fs, fps: %.1f' % \
