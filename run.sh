@@ -5,6 +5,7 @@ echo $BASE_DIR
 
 cd face_recognition_demo
 # python ./face_recognition_demo.py \
+# python ./face_recognition_demo_kinetic_playground.py \
 python ./checkin.py \
   -m_fd $BASE_DIR/models/face-detection-retail-0004.xml \
   -m_lm $BASE_DIR/models/landmarks-regression-retail-0009.xml \
